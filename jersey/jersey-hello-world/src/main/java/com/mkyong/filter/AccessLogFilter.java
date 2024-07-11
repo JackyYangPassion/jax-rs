@@ -4,7 +4,7 @@ package com.mkyong.filter;
 import com.mkyong.metrics.MetricsUtil;
 import jakarta.inject.Singleton;
 import jakarta.ws.rs.HttpMethod;
-import jakarta.ws.rs.Path;
+
 import jakarta.ws.rs.container.ContainerRequestContext;
 import jakarta.ws.rs.container.ContainerResponseContext;
 import jakarta.ws.rs.container.ContainerResponseFilter;
@@ -14,7 +14,7 @@ import jakarta.ws.rs.core.UriInfo;
 import jakarta.ws.rs.ext.Provider;
 import org.apache.tinkerpop.gremlin.server.GraphManager;
 
-import java.lang.reflect.Method;
+
 import java.util.List;
 import java.util.Map;
 import java.util.regex.Pattern;
