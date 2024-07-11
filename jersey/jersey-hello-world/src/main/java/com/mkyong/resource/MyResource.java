@@ -1,5 +1,6 @@
 package com.mkyong.resource;
 
+import com.codahale.metrics.annotation.Timed;
 import com.mkyong.service.MessageService;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.GET;
@@ -8,7 +9,7 @@ import jakarta.ws.rs.PathParam;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
 
-@Path("/hello")
+@Path("hello/{graph}/vertices")
 public class MyResource {
 
     // DI via HK2
@@ -16,6 +17,7 @@ public class MyResource {
     private MessageService messageService;
 
     // output text
+    @Timed(name = "single-create")
     @GET
     @Produces(MediaType.TEXT_PLAIN)
     public String hello() {
@@ -23,7 +25,7 @@ public class MyResource {
     }
 
     // output text with argument
-    @Path("/{name}")
+    @Path("{name}")
     @GET
     @Produces(MediaType.TEXT_PLAIN)
     public String hello(@PathParam("name") String name) {
@@ -31,7 +33,7 @@ public class MyResource {
     }
 
     // for dependency injection
-    @Path("/hk2")
+    @Path("hk2")
     @GET
     @Produces(MediaType.TEXT_PLAIN)
     public String helloHK2() {
