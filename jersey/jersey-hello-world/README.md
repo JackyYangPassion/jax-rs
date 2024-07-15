@@ -12,3 +12,8 @@ https://mkyong.com/webservices/jax-rs/jersey-hello-world-example/
 2. ETL
 3. 上报采集
 
+
+# 成果
+借助大模型 + 文档实现了filter metrics 的归一化处理
+
+AccessLogFilter:normalizePath()
